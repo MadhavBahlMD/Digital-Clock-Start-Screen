@@ -6,8 +6,8 @@ Read the blog for tutorial - [Link will be added soon](http://madhavbahl.tech)
 
 ## Screenshots
 
-![screenshot1](./static/1.png) ![screenshot2](./static/2.png)
-![screenshot3](./static/3.png) ![screenshot4](./static/4.png)
+![screenshot1](./static/ss1.png)
+![screenshot3](./static/ss2.png)
 
 ## Special Thanks
 
