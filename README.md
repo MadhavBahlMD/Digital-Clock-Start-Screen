@@ -10,7 +10,7 @@ Special Thanks to Unsplash for providing such amazing background images
 
 1. img1.jpg - Photo by Pietro De Grandi on Unsplash
 2. img2.jpg - Photo by Claudio Testa on Unsplash
-3. img3.jpg - Photo by Jeremy Bishop on Unsplash
+3. img3.jpg - Photo by Jasper Boer on Unsplash
 4. img4.jpg - Photo by Daniela Cuevas on Unsplash
 5. img5.jpg - Photo by Jeremy Bishop on Unsplash
 6. img6.jpg - Photo by Robert Lukeman on Unsplash

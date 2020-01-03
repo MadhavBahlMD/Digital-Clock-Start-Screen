@@ -3,7 +3,6 @@ import {
         View,
         StyleSheet,
         Text,
-        Image,
         ImageBackground
     } from 'react-native';
 
@@ -34,17 +33,7 @@ export default class WelcomeScreen extends Component {
                 style={styles.mainBackground}
                 source={this.selectRandomImage()}
             >
-                <View style={styles.welcomeScreenContainer}>
-                    <View style={styles.photoContainer}>
-                        <Image
-                            style={styles.mainPhoto}
-                            source={require('./../images/dp.png')}
-                        />
-                    </View>
-                    <Text style={styles.welcomeName}>
-                        Welcome,<Text style={{fontWeight: "bold"}}> Madhav Bahl</Text>
-                    </Text>
-                </View>
+
             </ImageBackground>
         )
     }
@@ -55,25 +44,5 @@ const styles = StyleSheet.create ({
         flex: 1,
         width: null,
         alignSelf: 'stretch'
-    }, welcomeScreenContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 20,
-        backgroundColor: 'rgba(0, 0, 0, 0.5)', // To add a backdrop effect
-    }, photoContainer: {
-        width: 160,
-        height: 160,
-    }, mainPhoto: {
-        flex: 1,
-        width: null,
-        alignSelf: 'stretch',
-        borderRadius: 80,
-        borderWidth: 2,
-        borderColor: '#fff'
-    }, welcomeName: {
-        marginTop: 18,
-        fontSize: 18,
-        color: '#fff',
     }
 });
