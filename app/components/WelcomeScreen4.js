@@ -4,12 +4,10 @@ import {
         StyleSheet,
         Text,
         Image,
-        ImageBackground,
-        TouchableOpacity
+        ImageBackground
     } from 'react-native';
 
 import moment from "moment";
-import * as ImagePicker from 'expo-image-picker';
 
 export default class WelcomeScreen extends Component {
     _isMounted = false;
@@ -30,26 +28,29 @@ export default class WelcomeScreen extends Component {
         let min = 1; 
         let max = 8; // change the max to num of images
         let selectedNumber = Math.floor(Math.random() * (max - min +1) + min);
+        console.log (selectedNumber);
 
         this.state = {
             time: moment().format("LTS"),
             date: moment().format("LL"),
             backgroundImage: imageAddr[selectedNumber],
-            profilePhotoSource: require('./../images/dp.png')
         };
     }
 
     componentDidMount () {
         this._isMounted = true;
         /**
-         * @future ideas
-         * 1. Add random quotes to make the screen inspirational
-         * 2. Add google search bar
+         * @todo 
+         * 1. Style the time and date texts
+         * 2. Add react-native-image-picker to let the user upload an image
+         * 3. Add random quotes to make the screen inspirational
+         * 4. Add google search bar
          */
 
         setInterval (() => {
             let currentDate = new Date();
             let time = currentDate.getSeconds ();
+            console.log ('TIME', time);
             if (this._isMounted) {
                 this.setState ({
                     ...this.state,
@@ -60,25 +61,10 @@ export default class WelcomeScreen extends Component {
         }, 1000);
     }    
 
-    componentWillUnmount () {
+    componentWillUnmount() {
         this._isMounted = false;
     }
     
-    handleImagePress () {
-        ImagePicker.requestCameraRollPermissionsAsync()
-            .then ((resp) => {
-                if (resp.granted) {
-                    ImagePicker.launchImageLibraryAsync()
-                        .then ((response) => {
-                            let profilePhotoSource = { uri: response.uri };
-                            this.setState ({
-                                ...this.state,
-                                profilePhotoSource
-                            })
-                        })
-                }
-            });
-    }
 
     render () {
         return (
@@ -87,15 +73,12 @@ export default class WelcomeScreen extends Component {
                 source={this.state.backgroundImage}
             >
                 <View style={styles.welcomeScreenContainer}>
-                    <TouchableOpacity 
-                        onPress={this.handleImagePress.bind(this)}
-                        style={styles.photoContainer}
-                    >
+                    <View style={styles.photoContainer}>
                         <Image
                             style={styles.mainPhoto}
-                            source={this.state.profilePhotoSource}
+                            source={require('./../images/dp.png')}
                         />
-                    </TouchableOpacity>
+                    </View>
                     <Text style={styles.welcomeName}>
                         Welcome,<Text style={{fontWeight: "bold"}}> Madhav Bahl</Text>
                     </Text>
@@ -128,7 +111,6 @@ const styles = StyleSheet.create ({
     }, photoContainer: {
         width: 160,
         height: 160,
-        borderRadius: 80,
     }, mainPhoto: {
         flex: 1,
         width: null,

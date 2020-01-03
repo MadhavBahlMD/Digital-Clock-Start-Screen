@@ -1,8 +1,13 @@
 # Digital Clock Welcome Screen
 
-A simple (re-usable) welcome screen component which uses `react-native-image-picker` to upload images from the gallery and display it in a beautiful welcome screen
+A simple (re-usable) welcome screen component which uses [`expo-image-picker`](https://docs.expo.io/versions/latest/sdk/imagepicker/) to upload images from the gallery and display it in a beautiful welcome screen
 
 Read the blog for tutorial - [Link will be added soon](http://madhavbahl.tech)
+
+## Screenshots
+
+![screenshot1](./static/1.png) ![screenshot2](./static/2.png)
+![screenshot3](./static/3.png) ![screenshot4](./static/4.png)
 
 ## Special Thanks
 
